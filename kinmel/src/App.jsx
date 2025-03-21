@@ -1,16 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
 function App() {
   const [data, setData] = useState([]);
-  
+
   useEffect(() => {
-    fetch('http://localhost:8081/new_db') // Ensure this endpoint is correct
+    fetch('http://localhost:8081/info') 
       .then(res => res.json())
       .then(data => setData(data))
-      .catch(err => {
-        console.error(err);
-        alert("Error fetching data. Please check the backend server.");
-      });
+      .catch(err => console.log(err))
   }, []);
 
   return (
@@ -25,8 +22,8 @@ function App() {
           </tr>
         </thead>
         <tbody>
-          {data.map((d, index) => (
-            <tr key={index}>
+          {data && Array.isArray(data) && data.map((d, i) => (
+            <tr key={i}>
               <td>{d.id}</td>
               <td>{d.name}</td>
               <td>{d.phone}</td>

@@ -19,9 +19,9 @@ app.get('/',(req,res)=>{
     return res.json('This is the server running from the back-end side,whoooooo hoooooo'); 
 })
 
-app.get('/table',(req,res)=>{
-    const sql = "SELECT * FROM Table";
-    db.query(sql,(err,result)=>{
+app.get('/info',(req,res)=>{
+    const sql = "SELECT * FROM info";
+    db.query(sql,(err,data)=>{
         if(err){
             return res.json(err);
         }else{
