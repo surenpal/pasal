@@ -7,13 +7,12 @@
             },
             "previewLimit": 50,
             "server": "localhost",
-            "port": 8081,
+            "port": 3306,
             "driver": "MySQL",
-            "name": "localhost",
+            "name": "MySQL Local",
+            "database": "new_db",
             "username": "root",
-            "database": "mydb",
-            "connectionTimeout": 30,
-            "askForPassword": true
+            "connectionTimeout": 30
         }
     ]
 }
